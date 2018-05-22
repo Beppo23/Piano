@@ -1,0 +1,109 @@
+..7 NOTA ERREPRODUZITU
+
+4 INSTRUMENTU (ZUK AUKERATU)
+-PIANO
+-BATERIA
+-TXIRULA
+-TROMPETA
+
+ABESTIAK GRABATU
+(X ABESTI), GRABATZEN DUGUNA ERREPRODUZITU
+FITXATEGIETAN BANATU
+ZERRENDA KATEATUAK(PLAY EGITEKO....)
+
+MENU BAT EDUKI BEHAR DU
+
+AKORDEAK
+
+HARDWARE
+-BOTOIAK
+-DIODO(LED KOLORE DESBERDINEKOAK)
+ANPLIFIKADOREA
+BOZGAILUTIK SEINAL ONA ATERA(10 W)
+ENERGI ITURRIA 
+
+
+
+
+
+
+
+
+
+
+http://www.forosdelweb.com/f96/duda-programando-piano-c-853542/
+
+
+
+
+
+
+
+PLANGINTZA:
+
+Lehenengo bilera Maiatzak 22-23
+	-Plangintza aurkeztu
+	-Excel orri batean jarri zer egin duen bakoitza(Eguneroko lana nola aurkeztu(excel orria))
+	-Kompromezua
+
+Bigarren bilera astelehenean maiatzak 28
+	-Erakutsi PC-an Linux programa (software funtzionatzen)
+	-Hardware diseinu zehatza
+	-Txostenarez indizea, hasiera..borradorea.
+
+Hirugarren bilera Ekainak 1
+	-Montajea erakutsi(Hardware)
+	-Software raspberry pi-an sartuta.
+	-Txostena landuta.
+ Laugarren bilera ekainak 4-8
+	-Produktua integratuta
+	-Txostenaren versioa definituta(Ekainak 8 mudleen entregatu)
+	-Aurkezpen oso egin zure tutoreari (15-20 min).
+
+
+TXOSTENA EKAINAK 8 ENTREGATU
+
+AURKEZPENA ETA PRODUKTUA ENTREGATU MUDLEEN EKAINAK 11
+
+ELEKTRONIKA DEFENTSA EKAINAK 7 
+ERREKUPERAKETA EKAINAK 13
+
+DEFENTSA PROGRAM EKAINAK 12
+
+PROGRAM ERREKUPERAKETA TODO TOCHA EKAINAK 15 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Maiatzak 24 Planifikazioa:
+
+Maiatzak 28 PC-ko bertsioa:
+
+Maiatzak 29 Amplifikadorearen diseinua eta kalkuloa:
+
+Ekainak 1 Memoriaren lehenengo bertsioa:
