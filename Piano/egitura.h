@@ -6,6 +6,11 @@
 #include <time.h>
 
 #define DoP "doPiano.wav"
+#define PIANO '1'
+#define FLAUTA '2'
+#define BIOLIN '3'
+#define GITARRA '4'
+#define TROMPETA '5'
 
 typedef struct Nota
 {
