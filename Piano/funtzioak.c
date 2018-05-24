@@ -1,6 +1,46 @@
 #include "egitura.h"
 
-void notakGrabatu(NOTA ** burua)
+//Erabiltzaileak return eman gabe notak jokatu ahal izateko
+#include <termios.h>
+#include <stdio.h>
+#include <sys/time.h>
+#include <unistd.h>
+#include <string.h>
+
+//Erabiltzaileak return eman gabe notak jokatu ahal izateko erabilitako metodoa
+
+//Funtzio honek sakatutako karaktereak bueltatzen ditu 'return' sakatu gabe
+char myGetch(void)
+{
+  char buf = 0;
+  struct termios old = {0};
+  if (tcgetattr(0, &old) < 0)
+  {
+    perror("tcsetattr()");
+  }
+  old.c_lflag &= ~ICANON;
+  old.c_lflag &= ~ECHO;
+  old.c_cc[VMIN] = 1;
+  old.c_cc[VTIME] = 0;
+  if (tcsetattr(0, TCSANOW, &old) < 0)
+  {
+    perror("tcsetattr ICANON");
+  }
+  if (read(0, &buf, 1) < 0)
+  {
+    perror ("read()");
+  }
+  old.c_lflag |= ICANON;
+  old.c_lflag |= ECHO;
+  if (tcsetattr(0, TCSADRAIN, &old) < 0)
+  {
+    perror ("tcsetattr ~ICANON");
+  }
+  return (buf);
+}
+
+
+void notakGrabatu(NOTA ** burua, char* instrumentu)
 {
 	int grabatzen = 1;
 	NOTA * aux;
@@ -23,167 +63,17 @@ void notakGrabatu(NOTA ** burua)
 				time = ((double)(end - start)) / CLOCKS_PER_SEC;
 				aux->denbnext = time;
 			}
-			aux = notaSortu(aukera);
-			notaJo(aukera);
+			aux = notaSortu(aukera, instrumentu);
+			notaJo(aukera, instrumentu);
 			sartuGrabaketan(burua, aux);
 			start = clock();
 		}
 		else grabatzen = 0;
-		/*switch (aukera)
-		{
-		case 'a':
-			if (start != -1)
-			{
-				end = clock();
-				time = ((double)(end - start)) / CLOCKS_PER_SEC;
-				aux->denbnext = time;
-			}
-			aux = notaSortu(aukera);
-			sartuGrabaketan(burua, aux);
-			start = clock();
-			break;
-		case 'b':
-			if (start != -1)
-			{
-				end = clock();
-				time = ((double)(end - start)) / CLOCKS_PER_SEC;
-				aux->denbnext = time;
-			}
-			aux = notaSortu(aukera);
-			sartuGrabaketan(burua, aux);
-			start = clock();
-			break;
-		case 'c':
-			if (start != -1)
-			{
-				end = clock();
-				time = ((double)(end - start)) / CLOCKS_PER_SEC;
-				aux->denbnext = time;
-			}
-			aux = notaSortu(aukera);
-			sartuGrabaketan(burua, aux);
-			start = clock();
-			break;
-		case 'd':
-			if (start != -1)
-			{
-				end = clock();
-				time = ((double)(end - start)) / CLOCKS_PER_SEC;
-				aux->denbnext = time;
-			}
-			aux = notaSortu(aukera);
-			sartuGrabaketan(burua, aux);
-			start = clock();
-			break;
-		case 'e':
-			if (start != -1)
-			{
-				end = clock();
-				time = ((double)(end - start)) / CLOCKS_PER_SEC;
-				aux->denbnext = time;
-			}
-			aux = notaSortu(aukera);
-			sartuGrabaketan(burua, aux);
-			start = clock();
-			break;
-		case 'f':
-			if (start != -1)
-			{
-				end = clock();
-				time = ((double)(end - start)) / CLOCKS_PER_SEC;
-				aux->denbnext = time;
-			}
-			aux = notaSortu(aukera);
-			sartuGrabaketan(burua, aux);
-			start = clock();
-			break;
-		case 'g':
-			if (start != -1)
-			{
-				end = clock();
-				time = ((double)(end - start)) / CLOCKS_PER_SEC;
-				aux->denbnext = time;
-			}
-			aux = notaSortu(aukera);
-			sartuGrabaketan(burua, aux);
-			start = clock();
-			break;
-		case 'h':
-			if (start != -1)
-			{
-				end = clock();
-				time = ((double)(end - start)) / CLOCKS_PER_SEC;
-				aux->denbnext = time;
-			}
-			aux = notaSortu(aukera);
-			sartuGrabaketan(burua, aux);
-			start = clock();
-			break;
-		case 'i':
-			if (start != -1)
-			{
-				end = clock();
-				time = ((double)(end - start)) / CLOCKS_PER_SEC;
-				aux->denbnext = time;
-			}
-			aux = notaSortu(aukera);
-			sartuGrabaketan(burua, aux);
-			start = clock();
-			break;
-		case 'j':
-			if (start != -1)
-			{
-				end = clock();
-				time = ((double)(end - start)) / CLOCKS_PER_SEC;
-				aux->denbnext = time;
-			}
-			aux = notaSortu(aukera);
-			sartuGrabaketan(burua, aux);
-			start = clock();
-			break;
-		case 'k':
-			if (start != -1)
-			{
-				end = clock();
-				time = ((double)(end - start)) / CLOCKS_PER_SEC;
-				aux->denbnext = time;
-			}
-			aux = notaSortu(aukera);
-			sartuGrabaketan(burua, aux);
-			start = clock();
-			break;
-		case 'l':
-			if (start != -1)
-			{
-				end = clock();
-				time = ((double)(end - start)) / CLOCKS_PER_SEC;
-				aux->denbnext = time;
-			}
-			aux = notaSortu(aukera);
-			sartuGrabaketan(burua, aux);
-			start = clock();
-			break;
-		case 'm':
-			if (start != -1)
-			{
-				end = clock();
-				time = ((double)(end - start)) / CLOCKS_PER_SEC;
-				aux->denbnext = time;
-			}
-			aux = notaSortu(aukera);
-			sartuGrabaketan(burua, aux);
-			start = clock();
-			break;
-		case 'q':
-			grabatzen = 0;
-			break;
-		default:
-			break;
-		}*/
+
 	}
 }
 
-NOTA * notaSortu(char key)
+NOTA * notaSortu(char key, char* instrumentu)
 {
 	NOTA * aux;
 
@@ -192,6 +82,7 @@ NOTA * notaSortu(char key)
 	aux->denbSak = - 1;
 	aux->denbnext = - 1;
 	aux->key = key;
+	aux->instrumentu = instrumentu;
 	aux->ptrNext = NULL;
 	aux->ptrPrev = NULL;
 
@@ -211,50 +102,66 @@ void sartuGrabaketan(NOTA ** burua, NOTA * aux)
 		aux->ptrPrev = ptr;
 	}
 }
-
-void notaJo(char aukera)
+//char instrumentua[]
+void notaJo(char aukera, char* instrumentua )
 {
+	 char ruta[] = {"aplay ..//Media//"};
+	 strcat(ruta, instrumentua);
 	switch (aukera)
 	{
 	case 'a':
-		system("aplay doPiano.wav");
+
+		strcat(ruta, "//do.wav");
+		system(ruta);
 		break;
 	case 'b':
-		system("aplay doSosPiano.wav");
+		strcat(ruta, "//doSos.wav");
+		//system("%s",ruta);
+
 		break;
 	case 'c':
-		system("aplay rePiano.wav");
+		strcat(ruta, "//re.wav");
+		//system("%s",ruta);
 		break;
 	case 'd':
-		system("aplay reSosPiano.wav");
+		strcat(ruta, "//reSos.wav");
+		//system("%s",ruta);
 		break;
 	case 'e':
-		system("aplay miPiano.wav");
+		strcat(ruta, "//miwav");
+		//system("%s",ruta);
 		break;
 	case 'f':
-		system("aplay faPiano.wav");
+		strcat(ruta, "//fa.wav");
+		//system("%s",ruta);
 		break;
 	case 'g':
-		system("aplay faSosPiano.wav");
+		strcat(ruta, "//faSos.wav");
+		//system("%s",ruta);
 		break;
 	case 'h':
-		system("aplay solPiano.wav");
+		strcat(ruta, "//sol.wav");
+	//	system("%s",ruta);
 		break;
 	case 'i':
-		system("aplay solSosPiano.wav");
+		strcat(ruta, "//solSos.wav");
+		//system("%s",ruta);
 		break;
 	case 'j':
-		system("aplay laPiano.wav");
+		strcat(ruta, "//la.wav");
+		//system("%s",ruta);
 		break;
 	case 'k':
-		system("aplay laSosPiano.wav");
+		strcat(ruta, "//laSos.wav");
+		//system("%s",ruta);
 		break;
 	case 'l':
-		system("aplay siPiano.wav");
+		strcat(ruta, "//si.wav");
+		//system("%s",ruta);
 		break;
-	case 'm':
-		system("aplay doMPiano.wav");
-		break;
+	//case 'm':
+		//system("aplay ..//Media//%s//doMPiano.wav");
+		//break;
 	default:
 		break;
 
@@ -265,7 +172,7 @@ void playRec(NOTA * burua)
 {
 	while(burua != NULL)
 	{
-		notaJo(burua->key);
+		notaJo(burua->key, burua->instrumentu);
 		sleep(burua->denbnext);
 		burua = burua->ptrNext;
 	}
@@ -277,25 +184,24 @@ void playRecRev(NOTA * burua)
 
 	while(burua != NULL)
 	{
-		notaJo(burua->key);
+		notaJo(burua->key, burua->instrumentu);
 		if(burua->ptrPrev != NULL) sleep(burua->ptrPrev->denbnext);
 		burua = burua->ptrPrev;
 
 	}
 }
 
-void freePlay()
+void freePlay(char* instrumentu)
 {
 	int jotzen = 1;
-	char str[128];
 	char aukera;
 
 
 	while(jotzen)
 	{
-		fgets(str, 128, stdin);
-		aukera = *str;
+		aukera= myGetch();
 
-		if (aukera >= 'a' && aukera <= 'm') notaJo(aukera);
-		else jotzen = 0;
+		if (aukera >= 'a' && aukera <= 'm') notaJo(aukera, instrumentu);
+		else if (aukera == 'p')jotzen = 0;
+	}
 }

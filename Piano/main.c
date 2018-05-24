@@ -1,23 +1,22 @@
 #include <stdio.h>
 #include "egitura.h"
 #include <stdlib.h>
+#include <string.h>
 
 int main(int argc, char ** argv)
 {
 	NOTA * burua = NULL;
 
+	//aNotakSartu();
+	//notakGrabatu(&burua);
 
-	notakGrabatu(&burua);
-
-	playRec(burua);
-
-	playRecRev(burua);
-
+	//playRecRev(burua);
+	menu_principal(&burua);
 	printf("Sakatu return amaitzeko...");
 	getchar();
 	return 0;
 }
-void menu_principal()
+void menu_principal(NOTA ** burua)
 {
 	char str[128];
 	int aukera2;
@@ -37,26 +36,24 @@ void menu_principal()
 
 		switch(aukera2)
 		{
-		case "1": menu_instrumentos();
+		case 1: menu_instrumentos();
 			break;
-		case "2": notaJo();
+		case 2: //notaJo();
+				freePlay(menu_instrumentos());
 			break;
-		case "3": notakGrabatu();
+		case 3: notakGrabatu(burua,menu_instrumentos());
 			break;
-		case "4": playRec();
+		case 4: playRec(* burua);
 			break;
-		case "5": playRecRev();
+		case 5: playRecRev(* burua);
 			break;
 }
 
 }
 
-void menu_instrumentos()
+char* menu_instrumentos()
 {
-	char str[128];
-	int instrumentua;
-	char instrumentuIzena[128];
-	char instrumentuChar = "notas_";
+	static char instrumentuChar[] = {"notas_"};
 
 	printf("\n");
     printf("1) Jokatu nahi duzun instrumentua\n");
@@ -66,41 +63,38 @@ void menu_instrumentos()
     printf("5) Erreproduzitu alderantziz\n");
     printf("5) Programatik irten\n");
 
-switch (instrumentua)
+
+
+switch (myGetch())
 {
 
 	 case PIANO:
 	{
-		       instrumentuIzena = "piano";
-		       strcat(instrumentuChar,instrumentuIzena);
+		       strcat(instrumentuChar,"piano");
 		       break;
 	}
 	case FLAUTA:
 	{
-		       instrumentuIzena = "flute";
-		       strcat(instrumentuChar, instrumentuIzena);
+		       strcat(instrumentuChar, "flute");
 		       break;
 	}
 	case BIOLIN:
 	{
-		       instrumentuIzena = "violin"
-		       strcat(instrumentuChar, instrumentuIzena);
+		       strcat(instrumentuChar, "violin");
 		       break;
 	}
 	case GITARRA:
 	{
-		       instrumentuIzena = "guitarra";
-		       strcat(instrumentuChar, instrumentuIzena);
+		       strcat(instrumentuChar, "gitarra");
 		       break;
 	}
 	case TROMPETA:
 	{
-		    	 instrumentuIzena= "trompeta";
-		    	 strcat(instrumentuChar, instrumentuIzena);
+		    	 strcat(instrumentuChar, "trompeta");
 		    	 break;
 	}
 
 
-	}
-
-
+}
+return instrumentuChar;
+}

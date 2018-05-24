@@ -17,15 +17,20 @@ typedef struct Nota
 	double denbSak;
 	double denbnext;
 	char key;
+	char* instrumentu;
 	struct Nota * ptrPrev;
 	struct Nota * ptrNext;
 }NOTA;
-
-void notaJo(char aukera);
-void notakGrabatu(NOTA ** burua);
-NOTA * notaSortu(char key);
+//, char instrumentua[]
+void menu_principal(NOTA ** burua);
+char* menu_instrumentos();
+void notaJo(char aukera, char* instrumentua);
+void notakGrabatu(NOTA ** burua, char* instrumentu);
+NOTA * notaSortu(char key, char* instrumentu);
 void sartuGrabaketan(NOTA ** burua, NOTA * aux);
 void playRec(NOTA * burua);
 void playRecRev(NOTA * burua);
-void freePlay();
+void freePlay(char* instrumentu);
+void NotakSartu();
+char myGetch(void);
 #endif
