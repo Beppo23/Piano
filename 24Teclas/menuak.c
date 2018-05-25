@@ -11,11 +11,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include "menuak.h"
-int menu_principal(NOTA ** burua)
+int menu_principal(NOTA ** burua,int *instrumentua)
 {
 	char str[128];
 	char aukera2;
-	int instrumentua = PIANO;
+
 
 	printf("\nMENU\n");
 	printf("\n");
@@ -37,7 +37,7 @@ int menu_principal(NOTA ** burua)
 		switch (aukera2)
 		{
 			case '1':
-				Instrumentuz_aldatu(&instrumentua);
+				Instrumentuz_aldatu(instrumentua);
 				break;
 			case '2': //notaJo();
 				//AQUI IRIA EL METODO DE FUNTZIOZ ALDATU (Grabatu, etc.)

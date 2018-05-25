@@ -16,13 +16,14 @@ int main(int argc, char ** argv)
 {
 	NOTA * burua = NULL;
 	int menua = 0;
+	int instrumentua = PIANO;
 	//aNotakSartu();
 	//notakGrabatu(&burua);
 
 	//playRecRev(burua);
 	do
 	{
-	menua = menu_principal(&burua);
+	menua = menu_principal(&burua, &instrumentua);
 	} while (menua!= 6);
 
 	printf("Sakatu return amaitzeko...");

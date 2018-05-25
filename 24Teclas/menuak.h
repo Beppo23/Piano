@@ -17,7 +17,7 @@
 #include <dos.h>*/
 
 
-int menu_principal(NOTA ** burua);
+int menu_principal(NOTA ** burua, int * instrumentua);
 char * menu_instrumentos();
 
 

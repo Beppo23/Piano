@@ -31,7 +31,8 @@ typedef struct Nota
 	struct Nota * ptrPrev;
 	struct Nota * ptrNext;
 }NOTA;
-
+void Instrumentuz_aldatu(int *instrumentu);
+char* karpetaLortu(int *instrumentu);
 void notaJo(char aukera, char* instrumentua);
 void notakGrabatu(NOTA ** burua, char* instrumentu);
 NOTA * notaSortu(char key, char* instrumentu);

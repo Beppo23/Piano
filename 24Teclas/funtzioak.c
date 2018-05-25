@@ -55,11 +55,11 @@ void Instrumentuz_aldatu(int *instrumentu){
 	}
 
 }
-char* karpetaLortu(int instrumentu){
+char* karpetaLortu(int *instrumentu){
 
 		char * izena;
 		char karpeta[20] = {"notas_"};
-		switch(instrumentu){
+		switch(*instrumentu){
 		case PIANO:
 			strcat(karpeta,"piano");
 			break;
