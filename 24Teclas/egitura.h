@@ -34,6 +34,7 @@ typedef struct Nota
 void Instrumentuz_aldatu(int *instrumentu);
 char* karpetaLortu(int *instrumentu);
 void notaJo(char aukera, char* instrumentua);
+void forkFuntzioa(char aukera, char*instrumentu);
 void notakGrabatu(NOTA ** burua, char* instrumentu);
 NOTA * notaSortu(char key, char* instrumentu);
 void sartuGrabaketan(NOTA ** burua, NOTA * aux);

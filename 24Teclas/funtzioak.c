@@ -38,7 +38,7 @@ void notakGrabatu(NOTA ** burua, char* instrumentu)
 				aux->denbnext = time;
 			}
 			aux = notaSortu(aukera, instrumentu);
-			notaJo(aukera, instrumentu);
+			forkFuntzioa(aukera, instrumentu);
 			sartuGrabaketan(burua, aux);
 			start = clock();
 		}
@@ -198,7 +198,7 @@ void playRec(NOTA * burua)
 {
 	while(burua != NULL)
 	{
-		notaJo(burua->key, burua->instrumentu);
+		forkFuntzioa(burua->key, burua->instrumentu);
 		sleep(burua->denbnext);
 		burua = burua->ptrNext;
 	}
@@ -210,7 +210,7 @@ void playRecRev(NOTA * burua)
 
 	while(burua != NULL)
 	{
-		notaJo(burua->key, burua->instrumentu);
+		forkFuntzioa(burua->key, burua->instrumentu);
 		if(burua->ptrPrev != NULL) sleep(burua->ptrPrev->denbnext);
 		burua = burua->ptrPrev;
 
@@ -230,7 +230,7 @@ void freePlay(char* instrumentu)
 		aukera = *str;
 
 
-		if (aukera >= 'a' && aukera <= 'm') notaJo(aukera, instrumentu);
+		if (aukera >= 'a' && aukera <= 'm') forkFuntzioa(aukera, instrumentu);
 		else if (aukera == 'p')jotzen = 0;
 	}
 	free(instrumentu);
@@ -248,4 +248,7 @@ void grabaketaEzabatu(NOTA * burua)
 	}
 }
 
-
+void forkFuntzioa(char aukera, char*instrumentu){
+	if (fork() == -1) printf("Errore bat egon da.\n");
+	else if (fork() == 0) notaJo(aukera,instrumentu);
+}

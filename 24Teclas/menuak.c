@@ -31,7 +31,7 @@ int menu_principal(NOTA ** burua,int *instrumentua)
 	aukera2 = *str;
 
 	if(aukera2<='m'&& aukera2>='a'){
-		notaJo(aukera2,karpetaLortu(instrumentua));
+		forkFuntzioa(aukera2,karpetaLortu(instrumentua));
 		//freePlay(karpetaLortu(instrumentua));
 	}else{
 		switch (aukera2)
