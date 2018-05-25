@@ -116,10 +116,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="egitura.h" />
+    <ClInclude Include="menuak.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="funtzioak.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="menuak.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Piano2-0.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

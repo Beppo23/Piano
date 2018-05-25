@@ -1,7 +1,4 @@
-﻿  funtzioak.c
-c:\users\usuario\desktop\mondragon\2.seihilekoa\pbl\piano2-0\piano2-0\funtzioak.c(119): warning C4047: 'función': 'DWORD' es distinto en los niveles de direccionamiento indirecto de 'char [7]'
-c:\users\usuario\desktop\mondragon\2.seihilekoa\pbl\piano2-0\piano2-0\funtzioak.c(119): warning C4024: 'PlaySoundA': tipos distintos para el parámetro formal y el parámetro real 3
-  main.c
-  Generando código...
-funtzioak.obj : error LNK2019: símbolo externo __imp__PlaySoundA@12 sin resolver al que se hace referencia en la función _notaJo
-C:\Users\USUARIO\Desktop\Mondragon\2.seihilekoa\PBL\Piano2-0\Debug\Piano2-0.exe : fatal error LNK1120: 1 externos sin resolver
+﻿  main.c
+  menuak.c
+  Generating Code...
+  Piano2-0.vcxproj -> C:\Users\Beppo\Documents\GitHub\Piano\Piano2-0\Debug\Piano2-0.exe
