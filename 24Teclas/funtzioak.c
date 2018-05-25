@@ -236,4 +236,16 @@ void freePlay(char* instrumentu)
 	free(instrumentu);
 }
 
+void grabaketaEzabatu(NOTA * burua)
+{
+	NOTA * aux = NULL;
+
+	while (burua != NULL)
+	{
+		aux = burua->ptrNext;
+		free(burua);
+		burua = aux;
+	}
+}
+
 

@@ -40,6 +40,7 @@ void sartuGrabaketan(NOTA ** burua, NOTA * aux);
 void playRec(NOTA * burua);
 void playRecRev(NOTA * burua);
 void freePlay(char* instrumentu);
+void grabaketaEzabatu(NOTA * burua);
 //void NotakSartu();
 //char myGetch(void);
 

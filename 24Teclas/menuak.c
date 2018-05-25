@@ -44,6 +44,11 @@ int menu_principal(NOTA ** burua,int *instrumentua)
 				//freePlay(menu_instrumentos());
 				break;
 			/*case 3:
+				if (*burua != NULL)
+				{
+				grabaketaEzabatu(*burua);
+				*burua = NULL;
+				}
 				notakGrabatu(burua, menu_instrumentos());
 				break;
 			case 4:
