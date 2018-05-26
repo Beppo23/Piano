@@ -1,16 +1,17 @@
 /*
- * menuak.c
+ * menua.c
  *
- *  Created on: May 25, 2018
- *      Author: root
+ *  Created on: May 26, 2018
+ *      Author: uesandi
  */
+
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
 #include "egitura.h"
 #include <stdlib.h>
 #include <string.h>
-#include "menuak.h"
+#include "menua.h"
 int menu_principal(NOTA ** burua,int *instrumentua)
 {
 	char str[128];
@@ -33,7 +34,8 @@ int menu_principal(NOTA ** burua,int *instrumentua)
 	if(aukera2<='m'&& aukera2>='a'){
 		forkFuntzioa(aukera2,karpetaLortu(instrumentua));
 		//freePlay(karpetaLortu(instrumentua));
-	}else{
+	}
+	else{
 		switch (aukera2)
 		{
 			case '1':
@@ -43,20 +45,20 @@ int menu_principal(NOTA ** burua,int *instrumentua)
 				//AQUI IRIA EL METODO DE FUNTZIOZ ALDATU (Grabatu, etc.)
 				//freePlay(menu_instrumentos());
 				break;
-			/*case 3:
+			case '3':
 				if (*burua != NULL)
 				{
 				grabaketaEzabatu(*burua);
 				*burua = NULL;
 				}
-				notakGrabatu(burua, menu_instrumentos());
+				notakGrabatu(burua, karpetaLortu(instrumentua));
 				break;
-			case 4:
+			case '4':
 				playRec(*burua);
 				break;
-			case 5:
+			case '5':
 				playRecRev(*burua);
-				break;*/
+				break;
 		}
 	}
 
@@ -104,5 +106,4 @@ char* menu_instrumentos()
 
 	return izena;
 }
-
 

@@ -1,9 +1,10 @@
 /*
  * funtzioak.c
  *
- *  Created on: May 25, 2018
- *      Author: root
+ *  Created on: May 26, 2018
+ *      Author: uesandi
  */
+
 #include "egitura.h"
 
 //Erabiltzaileak return eman gabe notak jokatu ahal izateko

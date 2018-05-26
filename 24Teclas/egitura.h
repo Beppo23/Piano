@@ -1,8 +1,8 @@
 /*
  * egitura.h
  *
- *  Created on: May 25, 2018
- *      Author: root
+ *  Created on: May 26, 2018
+ *      Author: uesandi
  */
 
 #ifndef EGITURA_H_
