@@ -25,7 +25,7 @@ int menu_principal(NOTA ** burua,int *instrumentua)
 	printf("3) Grabatu\n");
 	printf("4) Erreproduzitu\n");
 	printf("5) Erreproduzitu alderantziz\n");
-	printf("5) Programatik irten\n");
+	printf("6) Programatik irten\n");
 
 	printf("Sartu zure aukera: ");
 	fgets(str, 128, stdin);
@@ -58,6 +58,11 @@ int menu_principal(NOTA ** burua,int *instrumentua)
 				break;
 			case '5':
 				playRecRev(*burua);
+				break;
+			case '6':
+				aukera2 = 6;
+				break;
+			default:
 				break;
 		}
 	}
