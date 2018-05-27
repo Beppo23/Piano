@@ -1,5 +1,5 @@
-main.o: ../main.c ../egitura.h ../menuak.h
+main.o: ../main.c ../egitura.h ../menua.h
 
 ../egitura.h:
 
-../menuak.h:
+../menua.h:

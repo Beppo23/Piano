@@ -250,6 +250,11 @@ void grabaketaEzabatu(NOTA * burua)
 }
 
 void forkFuntzioa(char aukera, char*instrumentu){
-	if (fork() == -1) printf("Errore bat egon da.\n");
-	else if (fork() == 0) notaJo(aukera,instrumentu);
+	int pid = fork();
+	if (pid == -1) printf("Errore bat egon da.\n");
+	else if (pid == 0) {
+		notaJo(aukera,instrumentu);
+		exit(0);
+	}
+	else if (pid == 1) notaJo(aukera,instrumentu);
 }

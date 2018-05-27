@@ -46,5 +46,4 @@ void grabaketaEzabatu(NOTA * burua);
 //char myGetch(void);
 
 
-
 #endif /* EGITURA_H_ */

@@ -6,17 +6,17 @@
 C_SRCS += \
 ../funtzioak.c \
 ../main.c \
-../menuak.c 
+../menua.c 
 
 OBJS += \
 ./funtzioak.o \
 ./main.o \
-./menuak.o 
+./menua.o 
 
 C_DEPS += \
 ./funtzioak.d \
 ./main.d \
-./menuak.d 
+./menua.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
