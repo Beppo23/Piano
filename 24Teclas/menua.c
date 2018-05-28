@@ -54,10 +54,10 @@ int menu_principal(NOTA ** burua,int *instrumentua)
 				notakGrabatu(burua, karpetaLortu(instrumentua));
 				break;
 			case '4':
-				playRec(*burua);
+				playRec(*burua, karpetaLortu(instrumentua));
 				break;
 			case '5':
-				playRecRev(*burua);
+				playRecRev(*burua, karpetaLortu(instrumentua));
 				break;
 			case '6':
 				aukera2 = 6;
@@ -69,7 +69,7 @@ int menu_principal(NOTA ** burua,int *instrumentua)
 	return aukera2;
 }
 
-char* menu_instrumentos()
+/*char* menu_instrumentos()
 {
 	char * izena;
 	char instrumentuChar[20] = { "notas_" };
@@ -108,5 +108,5 @@ char* menu_instrumentos()
 	strcpy(izena, instrumentuChar);
 
 	return izena;
-}
+}*/
 

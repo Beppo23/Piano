@@ -195,23 +195,23 @@ void notaJo(char aukera, char* instrumentua )
 	free(name);
 }
 
-void playRec(NOTA * burua)
+void playRec(NOTA * burua, char* instrumentu)
 {
 	while(burua != NULL)
 	{
-		forkFuntzioa(burua->key, burua->instrumentu);
+		forkFuntzioa(burua->key, instrumentu);
 		if(burua->ptrNext != NULL) sleep(burua->denbnext);
 		burua = burua->ptrNext;
 	}
 }
 
-void playRecRev(NOTA * burua)
+void playRecRev(NOTA * burua, char* instrumentu)
 {
 	while(burua->ptrNext != NULL) burua = burua->ptrNext;
 
 	while(burua != NULL)
 	{
-		forkFuntzioa(burua->key, burua->instrumentu);
+		forkFuntzioa(burua->key, instrumentu);
 		if(burua->ptrPrev != NULL) sleep(burua->ptrPrev->denbnext);
 		burua = burua->ptrPrev;
 
