@@ -66,8 +66,6 @@ int menu_principal(NOTA ** burua,int *instrumentua)
 				break;
 		}
 	}
-
-
 	return aukera2;
 }
 

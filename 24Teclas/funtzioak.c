@@ -200,7 +200,7 @@ void playRec(NOTA * burua)
 	while(burua != NULL)
 	{
 		forkFuntzioa(burua->key, burua->instrumentu);
-		sleep(burua->denbnext);
+		if(burua->ptrNext != NULL) sleep(burua->denbnext);
 		burua = burua->ptrNext;
 	}
 }
@@ -256,5 +256,4 @@ void forkFuntzioa(char aukera, char*instrumentu){
 		notaJo(aukera,instrumentu);
 		exit(0);
 	}
-	else if (pid == 1) notaJo(aukera,instrumentu);
 }
